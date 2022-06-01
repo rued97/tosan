@@ -6,7 +6,8 @@ import org.springframework.boot.context.properties.ConstructorBinding
 @ConstructorBinding
 @ConfigurationProperties(prefix = "lucy.line")
 class LineConfig(
-    val channelAccessToken: String
+    val channelAccessToken: String,
+    val channelSecret: String
 ) {
 
 }
