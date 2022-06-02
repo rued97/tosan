@@ -3,7 +3,7 @@ package r97.lucy.line.webhook
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
 
-@JsonIgnoreProperties(ignoreUnknown=true)
+@JsonIgnoreProperties(ignoreUnknown = true)
 data class WebhookEvent(
     val type: String = "",
     val timestamp: Long = 0L,
@@ -16,5 +16,12 @@ data class WebhookEvent(
     // === メッセージイベント ==
     // Todo:イベントの種別ごとにクラスがほしい
     val replyToken: String = "",
-) {
+    // Todo:Textメッセージのみ対応
+    val message: TextMessage = TextMessage()
+
+
+    ) {
+    fun isMessageEvent(): Boolean {
+        return this.type == "message"
+    }
 }
