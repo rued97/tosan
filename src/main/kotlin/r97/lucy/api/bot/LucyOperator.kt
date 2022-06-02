@@ -31,7 +31,7 @@ class LucyOperator(
                 呼びましたか？
                 まだな～んにも実装されてませんよ。
                 ハロー世界！
-            """.trimIndent())
+            """.trimIndent().replace("\r\n", "\n"))
             .execute()
     }
 
