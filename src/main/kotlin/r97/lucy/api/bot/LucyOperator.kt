@@ -23,7 +23,7 @@ class LucyOperator(
         if(!event.message.isTextMessage()) {
             return;
         }
-        if(this.isToLucyMessage(event.message)) {
+        if(!this.isToLucyMessage(event.message)) {
             return;
         }
         MessageReplyClient(this.lineConfig.channelAccessToken, event.replyToken)
@@ -31,7 +31,7 @@ class LucyOperator(
                 呼びましたか？
                 まだな～んにも実装されてませんよ。
                 ハロー世界！
-            """)
+            """.trimIndent())
             .execute()
     }
 
