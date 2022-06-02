@@ -30,7 +30,7 @@ class MessageReplyClient(
                     ${this.textList.map { """{"type":"text","text":"${it}"}""" }.joinToString(",")}
                 ]
             }
-        """
+        """.trimIndent()
         logger.debug("BODY : [$body]")
         return body.toRequestBody()
     }
